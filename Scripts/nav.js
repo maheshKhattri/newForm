@@ -25,7 +25,7 @@ document.getElementById("logout").addEventListener("click", () => {
     window.location.href = "./../public/login.html";
   }
   document.getElementById("form").addEventListener("click", () => {
-    window.location.href = "./dist/form.html";
+    window.location.href = "./form.html";
   })
  
 
