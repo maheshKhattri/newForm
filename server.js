@@ -28,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
  */
  app.use(express.static(__dirname));
  app.use(express.static(__dirname + "/public"));
+ app.use(express.static(__dirname + "/dist"));
  app.use(express.static(__dirname + "/CSS"));
  app.use(express.static(__dirname + "/Images"));
  app.use(express.static(__dirname + "/UPLOADS"));
@@ -123,12 +124,12 @@ app.get("/get", async (req, res) => {
     res.json(data);
   });
 });
-app.get("/already-login-admin",  (req, res) => {
-  res.sendFile(__dirname + "/public/navbar.html");
-});
-app.get("/already-login-student", async (req, res) => {
-  res.sendFile(__dirname + "/public/message.html");
-});
+// app.get("/already-login-admin",  (req, res) => {
+//   res.sendFile(__dirname + "/public/navbar.html");
+// });
+// app.get("/already-login-student", async (req, res) => {
+//   res.sendFile(__dirname + "/public/message.html");
+// });
 
 app.post("/success-login", async (req, res) => {
   email = req.body.email;
@@ -145,13 +146,13 @@ app.post("/success-login", async (req, res) => {
     // if (await Identity.exists({ 'email_id': email, 'password': password })) {
     if ((await resp[0].first_name) === "admin") {
       if (result) {
-        res.sendFile(__dirname + "/public/navbar.html");
+        res.sendFile(__dirname + "/dist/navbar.html");
       } else {
         res.send(
           '<script>alert("Wrong password. Please try again."); window.location.href = "/login"; </script>'
         );
       }
-    } else res.sendFile(__dirname + "/public/message.html");
+    } else res.sendFile(__dirname + "/dist/message.html");
   } else {
     res.send(
       '<script>alert("Could not find the account. Please create a new account."); window.location.href = "/signup"; </script>'
