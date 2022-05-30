@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="IE=edge">
+
+
+  <title>Login form</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./../Images/login.png">
+
+  <link rel="stylesheet" href="./../CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+ 
+</head>
+
+<body>
+
+  <div class="title"> Login form</div>
+  <form action="/success-login" method="post">
+    <a class="link" href="/signup"><i class="fa-solid fa-user-plus"></i>&nbsp;<h3 class="text">Create account</h3></a>
+    <p> Email Id:&nbsp;&nbsp;&nbsp;&nbsp; <input type="email" name="email" required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /></p><br><br>
+
+    <p>Password:&nbsp;&nbsp;&nbsp; <input type="password" name="password" id="myInput" required /></p><br>
+    <p><input type="checkbox" onclick="myFunction()">Show Password<br></p>
+    <p><input type="submit"></div>
+    </p>
+  </form>
+
+
+
+
+  
+
+  <script>
+ 
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+
+    if(localStorage.getItem("isLoggedIn")=="true"){
+      window.location.href="./message.html";
+    }if(localStorage.getItem("isLogged")=="true"){
+      window.location.href="./navbar.html";
+    }
+  </script>
+  <!-- <script src="" async defer></script> -->
+</body>
+
+</html>

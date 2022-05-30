@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Signup form</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./../Images/signup.jpeg">
+  <link rel="stylesheet" href="./../CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  <div class="title"> Sign-up form</div>
+
+  <form action="/signup" method="post">
+    <a href="/login"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;<h3 class="text">Login</h3></a>
+    <p> <label for="fname">First name: </label><input type="text" name="fname" required pattern="^[A-Za-z\s]+"
+        title='Should only contain letters' />
+    </p>
+
+    <br><br>
+    <p> Last Name: <input type="text" name="lname" required pattern="^[A-Za-z -]+$"
+        title='Should only contain letters' /></p><br><br>
+    <p> Email Id:&nbsp;&nbsp;&nbsp;&nbsp; <input type="email" name="email" required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /></p><br><br>
+    <p>Contact No: <input type="number" name="contact" required /></p><br><br>
+    <p>Password:&nbsp;&nbsp;&nbsp; <input type="password" name="password" id="myInput" required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+        title='Password must contain at least 6 characters, including UPPER/lowercase and numbers.' /></p><br>
+    <p><input type="checkbox" onclick="myFunction()">Show Password<br></p>
+    <p><input type="submit"></div>
+    </p>
+  </form>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  
+  </script>
+ 
+</body>
+
+</html>

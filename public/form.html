@@ -1,0 +1,249 @@
+<!--
+  This is the HTML file for the form layout to upload the files
+  to the database where file is declared as a multi-part form 
+  data to use multer in the node server.js file
+  @author Mahesh Khattri (A00432768)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload files</title>
+    <link rel="icon" type="image/x-icon" href="./../Images/upload-form.png" />
+    <link rel="stylesheet" href="./../CSS/my_styles.css" />
+<!-- 1. jQuery UI -->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+
+<!-- 2. Include touch punch -->
+<script src="jquery.ui.touch-punch.min.js"></script>
+    <script>
+      $(function () {
+        $(".options").sortable({
+          update: function (event, ui) {
+            // getIdsOfImages();
+            sortImagePosition();
+          },
+        });
+      });
+
+      function sortImagePosition() {
+        var doc = document.querySelectorAll(".image-files");
+        for (var i = 0; i < doc.length; i++) {
+          doc[i].name = "file" + (i + 4);
+        }
+      }
+    </script>
+  </head>
+
+  <body id="animate-me">
+    <form action="/uploadfile" method="post" enctype="multipart/form-data">
+      <div class="grid">
+        <div id="left-pane">
+          <div class="main-image">
+            <img id="main-image" src="./../Images/eagle.jpg" alt="Sample photo" />
+            <input
+              type="file"
+              name="file1"
+              accept="image/*"
+              onchange="document.getElementById('main-image').src = window.URL.createObjectURL(this.files[0])"
+              required
+            /><a class="text">Upload Main Image</a>
+          </div>
+
+          <div class="text-files">
+            <input class="input-files" type="file" accept=".txt"/>
+            &nbsp;Upload A Story Content Text File In Mik'maq
+            <h4>&nbsp;OR</h4>
+          </div>
+          <p>
+            <textarea
+              class="text-area"
+              rows="8"
+              placeholder="Write The Story Content In Mik'maq"
+              name="story" required
+            ></textarea>
+          </p>
+
+          <div class="text-files">
+            <input class="input-files" type="file" accept=".txt"/>
+            &nbsp;Upload A English Translation File Of The Story 
+            <h4>&nbsp;OR</h4>
+          </div>
+          <p>
+            <textarea
+              class="text-area"
+              rows="8"
+              placeholder="Write The English Translation Of The Story"
+              name="storyTranslation" required
+            ></textarea>
+          </p>
+        </div>
+
+        <div id="right-pane">
+          <div class="options">
+            <p>
+              <img
+                class="images"
+                id="img1"
+                src="./../Images/moose.jpg"
+                alt="Sample photo"
+              />
+              <input
+                type="file"
+                class="image-files"
+                name="file2"
+                accept="image/*"
+                onchange="document.querySelector('#img1').src = window.URL.createObjectURL(this.files[0])"
+                required
+              />
+            </p>
+            <p>
+              <img
+                class="images"
+                id="img2"
+                src="./../Images/beareating.jpg"
+                alt="Sample photo"
+              />
+              <input
+                type="file"
+                class="image-files"
+                name="file3"
+                accept="image/*"
+                onchange="document.querySelector('#img2').src = window.URL.createObjectURL(this.files[0])"
+                required
+              />
+            </p>
+            <p>
+              <img
+                class="images"
+                id="img3"
+                src="./../Images/beareatingfish.jpg"
+                alt="Sample photo"
+              />
+              <input
+                type="file"
+                class="image-files"
+                name="file4"
+                accept="image/*"
+                onchange="document.querySelector('#img3').src = window.URL.createObjectURL(this.files[0])"
+                required
+              />
+            </p>
+          </div>
+<div class="writeOptions">
+            <p>
+              <a class="text">Upload Image Option 1</a>
+              <textarea
+                rows="5"
+                placeholder="Type first option in Mik'maq"
+                name="firstOption" required
+              ></textarea>
+            </p>
+          
+            <p>
+              <a class="text">Upload Image Option 2</a>
+              <textarea
+                rows="5"
+                placeholder="Type second option in Mik'maq"
+                name="secondOption" required
+              ></textarea>
+            </p>
+            <p>
+              <a class="text">Upload Image Option 3</a>
+              <textarea
+                rows="5"
+                placeholder="Type third option in  Mik'maq"
+                name="thirdOption" required
+              ></textarea>
+            </p>
+          </div>
+
+          <p class="audio-file">
+            <input type="file" name="file5" accept="audio/*" required />Upload
+            MP3 Audio File For Option 1
+          </p>
+          <p class="audio-file">
+            <input type="file" name="file6" accept="audio/*" required />Upload
+            MP3 Audio File For Option 2
+          </p>
+          <p class="audio-file">
+            <input type="file" name="file7" accept="audio/*" required />Upload
+            MP3 Audio File For Option 3
+          </p>
+          <p class="chapter-info">
+            <input
+              type="text"
+              placeholder=" Author name"
+              name="author"
+              required
+            /><a>&nbsp;Author</a>
+          </p>
+          <p class="chapter-info">
+            <input
+              type="number"
+              placeholder=" Chapter number"
+              name="chapter"
+              required
+            /><a>&nbsp;Chapter</a>
+          </p>
+          <p class="chapter-info">
+            <input
+              type="text"
+              placeholder=" Title of the chapter"
+              name="title"
+              required
+            /><a>&nbsp;Title</a>
+          </p>
+          <div id="submits"><button type="submit">Submit</button></div>
+        </div>
+      </div>
+    </form>
+    <div id="inputs"></div>
+    
+
+    <script type="text/javascript">
+      function displayText() {
+        var textarea = document.querySelectorAll(".text-area");
+        var input = document.querySelectorAll(".input-files");
+        for (let i = 0; i < input.length; i++) {
+          // console.log(this.files[0]);
+
+          input[i].addEventListener("change", function () {
+            var fr = new FileReader();
+
+            fr.onload = (e) => {
+              //  document.getElementById("inputs").textContent = fr.result;
+              textarea[i].value = fr.result;
+            };
+            fr.onerror = (e) => alert(e.target.error.name);
+            fr.readAsText(this.files[0]);
+          });
+        }
+      }
+      displayText();
+      var submit = document.getElementById("submits");
+      submit.onclick = function () {
+        var id = document.querySelectorAll("text-area")[0].value;
+        console.log(id);
+        var content = document.querySelectorAll(".input-files")[0].value;
+        console.log(content);
+        writeToFile(id, content);
+      };
+
+        window.addEventListener( "pageshow", function ( event ) {
+        var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
+        if ( historyTraversal ) {
+          // Handle page restore.
+          //alert('refresh');
+          window.location.reload();
+        }
+      });
+    </script>
+  </body>
+  <!-- <script src="Scripts/read-file.js"></script> -->
+  <!-- <script src="Scripts/login-check.js"></script> -->
+</html>

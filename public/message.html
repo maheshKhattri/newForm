@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Send message</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../CSS/style.css">
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  <div id="sign"> Send message to your teacher</div>
+
+  <form  target="_blank" action="https://formsubmit.co/8019dcdc22b1b25cdc95de7dd87cbe59" method="POST">
+   
+    <p> <span><label for="fname"> Name:&nbsp;&nbsp; </label><input type="text" name="Name" required pattern="^[A-Za-z\s]+"
+        title='Should only contain letters' />
+      </span>
+   
+    <br><br>
+   
+  <span>Email Id: <input type="email" name="Email" required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /></span> </p><br>
+   <p>Message</p>
+    <p> <textarea placeholder="Your Message"  name="Message" required></textarea></p>
+    <p><input type="submit"></div>
+    </p>
+  </form>
+<button id="logout">Logout</button>
+</body>
+<script src="./../Scripts/login-check.js"></script>
+</html>

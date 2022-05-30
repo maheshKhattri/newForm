@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+
+body {
+  /* background:radial-gradient(circle at center, whitesmoke,rgb(155, 155, 231) ,rgb(224, 151, 224),rgb(236, 162, 162),whitesmoke); */
+  background: radial-gradient(#efc9c9, #b9bef0);
+  /* background: linear-gradient(to left,rgb(236, 181, 168), transparent 70%); */
+}
+#sign,
+p {
+  font-family: "Lobster", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  /* place-items: center; */
+}
+p:first-of-type {
+  margin-top: 0.5rem;
+}
+input[type="submit"] {
+  color: purple;
+  font-weight: bold;
+  font-size: 1em;
+  background: rgb(243, 217, 165);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin: 1.5rem 7rem;
+}
+form {
+  margin: 1vh 25vw;
+  border: 1vw ridge rgb(206, 194, 241);
+  background: linear-gradient(to left, rgb(155, 155, 231), rgb(237, 190, 237));
+  /* border-image-slice: 1; */
+  /* border-image-source:linear-gradient(15deg,rgb(155, 155, 231) ,rgb(237, 190, 237),rgb(255, 156, 156));    */
+  /* mix-blend-mode: multiply; */
+  box-shadow: 5px 10px 3px;
+}
+.title {
+  letter-spacing: 2px;
+  word-spacing: 10px;
+  background: linear-gradient(
+    to left,
+    rgb(155, 155, 231),
+    rgb(255, 156, 156)
+  );
+  border-style: ridge;
+  border-width: 2px;
+  font-weight: bold;
+  font-size: larger;
+  padding: 10px;
+  margin: 1vh 25vw;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+a {
+  margin: 0 0.2rem;
+  text-decoration: none;
+}
+span{
+  margin: 0 1vw;
+  text-align: center;
+}
+textarea {
+  width: 43vw;
+  height: 10vw;
+  margin:0.5rem;
+  background: whitesmoke;
+  color: blue;
+  outline: none;
+}
+i{
+ 
+  border:2px  outset rgb(224, 169, 224);
+  margin:2px 0;
+  padding:2px;
+  border-radius: 15%;
+}h3.text{
+  display: inline;
+  font-size: 1.2em;
+}
+h3.text:hover{
+  
+  font-size: larger;
+  letter-spacing: 0.01rem;
+  color:black;
+  transition:.4s ease;
+  
+}
+i:hover{
+  transform: scale(1.08);
+  margin-right:0.1rem;
+  color:black;
+}
+input[type="submit"]{
+  opacity: 0.8;
+}
+input[type="submit"]:hover,.title:hover{
+  opacity: 1;
+}
+
+
+input:not([type="checkbox"], [type="submit"]) {
+  margin-left:0.5rem;
+  width: 15vw;
+  color:blueviolet;
+  opacity: 0.8;
+  
+}
+
+input:not([type="checkbox"], [type="submit"]):hover {
+  margin-left:1rem;
+  transform: scale(1.08);
+  background: antiquewhite;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  form,#sign {
+    margin: 0;
+}input:not([type="checkbox"], [type="submit"]) {
+  width: 37vw;
+}
+textarea{
+ width:  87vw;
+ height:20vh;
+}
+}
