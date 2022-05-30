@@ -124,13 +124,7 @@ app.get("/get", async (req, res) => {
     res.json(data);
   });
 });
-var admin_loggedIn=false;
-app.get("/form",  (req, res) => {
-  if(admin_loggedIn){
-    res.sendFile(__dirname + "/dist/form.html");
-  }
-  res.sendFile(__dirname + "/public/login.html");
-});
+
 // app.get("/already-login-student", async (req, res) => {
 //   res.sendFile(__dirname + "/public/message.html");
 // });
@@ -151,7 +145,6 @@ app.post("/success-login", async (req, res) => {
     // if (await Identity.exists({ 'email_id': email, 'password': password })) {
     if ((await resp[0].first_name) === "admin") {
       if (result) {
-        admin_loggedIn=true;
         res.sendFile(__dirname + "/dist/navbar.html");
       } else {
         res.send(
