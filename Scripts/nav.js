@@ -24,6 +24,9 @@ document.getElementById("logout").addEventListener("click", () => {
   if (localStorage.getItem("isLogged") == "false") {
     window.location.href = "./../public/login.html";
   }
+  document.getElementById("form").addEventListener("click", () => {
+    window.location.href = "./dist/form.html";
+  })
  
 
 //   }else{
