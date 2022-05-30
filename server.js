@@ -32,8 +32,8 @@ app.use(express.urlencoded({ extended: true }));
  app.use(express.static(__dirname + "/Images"));
  app.use(express.static(__dirname + "/UPLOADS"));
 // app.use("/Scripts", express.static(__dirname + "/Scripts"));
-app.use("/UPLOADS", express.static(__dirname + "/UPLOADS"));
-app.use(express.static("Form"));
+// app.use("/UPLOADS", express.static(__dirname + "/UPLOADS"));
+app.use(express.static("newForm"));
 // app.use(compression());
 
 /**
