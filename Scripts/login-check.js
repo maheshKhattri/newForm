@@ -4,9 +4,9 @@
   }
   document.getElementById("logout").addEventListener("click", () => {
     localStorage.setItem("isLoggedIn", "false");
-    window.location.href = "/dist/login.html";
+    window.location.href = "./../public/login.html";
   })
   if (localStorage.getItem("isLoggedIn") == "false") {
-    window.location.href = "/dist/login.html";
+    window.location.href = "./../public/login.html";
   }
  
