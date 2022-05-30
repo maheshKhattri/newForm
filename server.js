@@ -129,9 +129,7 @@ app.get("/already-login-admin",  (req, res) => {
 app.get("/already-login-student", async (req, res) => {
   res.sendFile(__dirname + "/public/message.html");
 });
-app.get("/form",(req,res)=>{
-  res.sendFile(__dirname + "/public/form.html");
-})
+
 app.post("/success-login", async (req, res) => {
   email = req.body.email;
   password = req.body.password;
