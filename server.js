@@ -126,7 +126,7 @@ app.get("/get", async (req, res) => {
 });
 var admin_loggedIn=false;
 app.get("/form",  (req, res) => {
-  if(addEventListener){
+  if(admin_loggedIn){
     res.sendFile(__dirname + "/dist/form.html");
   }
   res.sendFile(__dirname + "/public/login.html");
