@@ -24,9 +24,10 @@ document.getElementById("logout").addEventListener("click", () => {
   if (localStorage.getItem("isLogged") == "false") {
     window.location.href = "./../public/login.html";
   }
+  if (localStorage.getItem("isLogged") == "true") {
   document.getElementById("form").addEventListener("click", () => {
     window.location.href = "./form.html";
-  })
+  })}
  
 
 //   }else{
