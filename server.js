@@ -126,7 +126,7 @@ app.get("/get", async (req, res) => {
 // app.get("/already-login-admin",  (req, res) => {
 //   res.sendFile(__dirname + "/dist/navbar.html");
 // });
-// app.get("/already-login-student", async (req, res) => {
+// app.get("/", async (req, res) => {
 //   res.sendFile(__dirname + "/dist/message.html");
 // });
 

@@ -14,12 +14,12 @@
     <title>Upload files</title>
     <link rel="icon" type="image/x-icon" href="./../Images/upload-form.png" />
     <link rel="stylesheet" href="./../CSS/my_styles.css" />
-<!-- 1. jQuery UI -->
-<script src="https://code.jquery.com/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+    <!-- 1. jQuery UI -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
 
-<!-- 2. Include touch punch -->
-<!-- <script src="jquery.ui.touch-punch.min.js"></script> -->
+    <!-- 2. Include touch punch -->
+    <!-- <script src="jquery.ui.touch-punch.min.js"></script> -->
     <script>
       $(function () {
         $(".options").sortable({
@@ -44,7 +44,11 @@
       <div class="grid">
         <div id="left-pane">
           <div class="main-image">
-            <img id="main-image" src="./../Images/eagle.jpg" alt="Sample photo" />
+            <img
+              id="main-image"
+              src="./../Images/eagle.jpg"
+              alt="Sample photo"
+            />
             <input
               type="file"
               name="file1"
@@ -55,7 +59,7 @@
           </div>
 
           <div class="text-files">
-            <input class="input-files" type="file" accept=".txt"/>
+            <input class="input-files" type="file" accept=".txt" />
             &nbsp;Upload A Story Content Text File In Mik'maq
             <h4>&nbsp;OR</h4>
           </div>
@@ -64,13 +68,14 @@
               class="text-area"
               rows="8"
               placeholder="Write The Story Content In Mik'maq"
-              name="story" required
+              name="story"
+              required
             ></textarea>
           </p>
 
           <div class="text-files">
-            <input class="input-files" type="file" accept=".txt"/>
-            &nbsp;Upload A English Translation File Of The Story 
+            <input class="input-files" type="file" accept=".txt" />
+            &nbsp;Upload A English Translation File Of The Story
             <h4>&nbsp;OR</h4>
           </div>
           <p>
@@ -78,7 +83,8 @@
               class="text-area"
               rows="8"
               placeholder="Write The English Translation Of The Story"
-              name="storyTranslation" required
+              name="storyTranslation"
+              required
             ></textarea>
           </p>
         </div>
@@ -134,22 +140,24 @@
               />
             </p>
           </div>
-<div class="writeOptions">
+          <div class="writeOptions">
             <p>
               <a class="text">Upload Image Option 1</a>
               <textarea
                 rows="5"
                 placeholder="Type first option in Mik'maq"
-                name="firstOption" required
+                name="firstOption"
+                required
               ></textarea>
             </p>
-          
+
             <p>
               <a class="text">Upload Image Option 2</a>
               <textarea
                 rows="5"
                 placeholder="Type second option in Mik'maq"
-                name="secondOption" required
+                name="secondOption"
+                required
               ></textarea>
             </p>
             <p>
@@ -157,7 +165,8 @@
               <textarea
                 rows="5"
                 placeholder="Type third option in  Mik'maq"
-                name="thirdOption" required
+                name="thirdOption"
+                required
               ></textarea>
             </p>
           </div>
@@ -203,9 +212,12 @@
       </div>
     </form>
     <div id="inputs"></div>
-    
 
+    <button id="logout">Logout</button>
     <script type="text/javascript">
+      if (localStorage.getItem("isLogged") == "false") {
+        window.location.href = "./../public/login.html";
+      }
       function displayText() {
         var textarea = document.querySelectorAll(".text-area");
         var input = document.querySelectorAll(".input-files");
@@ -234,9 +246,12 @@
         writeToFile(id, content);
       };
 
-        window.addEventListener( "pageshow", function ( event ) {
-        var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
-        if ( historyTraversal ) {
+      window.addEventListener("pageshow", function (event) {
+        var historyTraversal =
+          event.persisted ||
+          (typeof window.performance != "undefined" &&
+            window.performance.navigation.type === 2);
+        if (historyTraversal) {
           // Handle page restore.
           //alert('refresh');
           window.location.reload();
