@@ -19,10 +19,10 @@ if (window.location.href.indexOf("success-login") > -1) {
   }
 document.getElementById("logout").addEventListener("click", () => {
     localStorage.setItem("isLogged",false)
-    window.location.href = "./login.html";
+    window.location.href = "/dist/login.html";
   })
   if (localStorage.getItem("isLogged") == "false") {
-    window.location.href = "./login.html";
+    window.location.href = "/dist/login.html";
   }
  
 
