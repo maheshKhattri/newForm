@@ -145,13 +145,13 @@ app.post("/success-login", async (req, res) => {
     // if (await Identity.exists({ 'email_id': email, 'password': password })) {
     if ((await resp[0].first_name) === "admin") {
       if (result) {
-        res.sendFile(__dirname + "/dist/navbar.html");
+        res.sendFile(__dirname + "./../dist/navbar.html");
       } else {
         res.send(
           '<script>alert("Wrong password. Please try again."); window.location.href = "/login"; </script>'
         );
       }
-    } else res.sendFile(__dirname + "/dist/message.html");
+    } else res.sendFile(__dirname + "./../dist/message.html");
   } else {
     res.send(
       '<script>alert("Could not find the account. Please create a new account."); window.location.href = "/signup"; </script>'
