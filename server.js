@@ -26,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 /**
  * declare the directory of the files used by the form
  */
+
  app.use(express.static(__dirname));
  app.use(express.static(__dirname + "/public"));
  app.use(express.static(__dirname + "/CSS"));
@@ -117,12 +118,24 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/get", async (req, res) => {
-  Book.find({}, (err, data) => {
-    // data = JSON.parse(JSON.stringify(data));
-    //console.log(data[0].pages[0].filenames[0])
-    res.json(data);
-  });
+ Book.find({}, (err, data) => {
+  //  data = JSON.parse(JSON.stringify(data));
+ 
+    // console.log(data[0].pages[0].filenames[0])
+     res.json(data);
+    
+    
+  })
+ 
+  // res.sendFile(__dirname +"/public/in.html")
+  
 });
+
+app.get("/getData",async(req,res)=>{
+  res.sendFile(__dirname+"/public/in.html");
+})
+
+
 // app.get("/already-login-admin",  (req, res) => {
 //   res.sendFile(__dirname + "/dist/navbar.html");
 // });
@@ -196,6 +209,17 @@ app.post("/signup", async (req, res) => {
       });
   }
 });
+app.post("/deletePage",(req,res)=>{
+  Book.findOne({ chapter: '1' }, function (err) {
+    console.log(pages.length);
+    if(pages.length==1){
+      Book.findOneAndDelete({chapter:'1'})
+    }
+    if(err) console.log(err);
+    console.log("Successful deletion");
+  });
+})
+
 /**
  * when the user submits the file, it first uploads the files
  * to the ugdev server and then saves the files' names in the
