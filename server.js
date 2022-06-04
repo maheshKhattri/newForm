@@ -52,7 +52,7 @@ mongoose
  */
 var storeUploads = multer.diskStorage({
   destination: (req, file, cb) => {
-    var dest = "UPLOADS/";
+    var dest = "UPLOADS";
     // var dest = "https://ugdev.cs.smu.ca/~group17/Form/UPLOADS";
     cb(null, dest);
   },
